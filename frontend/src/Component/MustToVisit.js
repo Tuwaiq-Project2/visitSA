@@ -1,48 +1,45 @@
 import axios from 'axios'
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
+import FavPlace from './FavPlace'
 import "./MustToVisit.css"
 
 export default function MustToVisit() {
-    const [cardsArr, setCardsArr] = useState([])
-   
 
-    const mustToVisitArr = async ()=>{
+    const [cardsArr, setCardsArr] = useState([])
+
+    // const cardsArr = [
+    //     {header:"The Cultural Hub", paragraph:"A cultural delight for all the tourists and business travelers alike, Riyadh is a heart of Saudi Arabia which has retained its traditional charm even after being modernized.", imgUrl: "https://www.myholidays.com/blog/content/images/2020/10/Riyadh--The-Cultural-Hub-in-Saudi-Arabia.jpg"},
+    //     {header:"Ithra’s Library", paragraph:"a dynamic place of learning and activity. Our library is designed to foster individual and collaborative learning while nurturing a love of reading, discovery and the pursuit of knowledge.", imgUrl: "https://www.myholidays.com/blog/content/images/2020/10/Riyadh--The-Cultural-Hub-in-Saudi-Arabia.jpg"},
+    //     {header:"Umluj is Maldives of Saudi Arabia", paragraph:"Is a small town in the northwest of Saudi Arabia 150 km north of Yanbu and right next to the Red Sea", imgUrl: "https://insidesaudi.com/wp-content/uploads/2019/04/Umluj-Islamd.jpg"},
+    // ]
+   
+     useEffect (async () => {
         const response = await axios.get("http://localhost:5000/")
         setCardsArr(response.data)
-        console.log(response.data)
+        console.log(response.data);
+    }, [])
+
+    const favPlace= async(index)=>{
+        const response = await axios.post(`http://localhost:5000/${index}`)
     }
 
     return (
-        <div>
+    <div>
             
             <div className="container">
 
-{/* {console.log(cardsArr)} */}
-
-                <div>
-                    <img src="https://www.myholidays.com/blog/content/images/2020/10/Riyadh--The-Cultural-Hub-in-Saudi-Arabia.jpg" alt="Riadh" />
-                    <span>♥</span>
-                    <hr />
-                    <h3>The Cultural Hub In Saudi Arabia</h3>
-                    <p>A cultural delight for all the tourists and business travelers alike, Riyadh is a heart of Saudi Arabia which has retained its traditional charm even after being modernized.</p>
-                </div>
-
-                <div>
-                    <img src="data:image/jpeg;base64,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" alt="ithra library" />
-                    <span onClick={()=>{mustToVisitArr()}}>♥</span>
-                    <hr />
-                    <h3>Ithra’s Library</h3>
-                    <p>a dynamic place of learning and activity. Our library is designed to foster individual and collaborative learning while nurturing a love of reading, discovery and the pursuit of knowledge.</p>
-                </div>
-
-                <div>
-                    <img src="https://insidesaudi.com/wp-content/uploads/2019/04/Umluj-Islamd.jpg" alt="umluj" />
-                    <span>♥</span>
-                    <hr />
-                    <h3>Umluj is Maldives of Saudi Arabia</h3>
-                    <p>is a small town in the northwest of Saudi Arabia 150 km north of Yanbu and right next to the Red Sea</p>
-                </div>
-
+                    {
+                        cardsArr.map((elem,index)=>{
+                            return (
+                            <div key={index}>
+                                <img src={elem.imgUrl} />
+                                <span onClick={()=>{favPlace(index)}}>♥</span>
+                                <hr />
+                                <h3>{elem.header}</h3>
+                                <p>{elem.paragraph}</p>
+                            </div>)
+                        })
+                    }
             </div>
 
         </div>
