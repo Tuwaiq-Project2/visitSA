@@ -14,9 +14,28 @@ const mustToVisit = [
     {header:"Umluj is Maldives of Saudi Arabia", paragraph:"Is a small town in the northwest of Saudi Arabia 150 km north of Yanbu and right next to the Red Sea", imgUrl: "https://insidesaudi.com/wp-content/uploads/2019/04/Umluj-Islamd.jpg"},
 ];
 
+const favPlaceArr = []
+
 app.get("/",(req,res)=>{
     res.status(200)
     res.json(mustToVisit)
+})
+
+app.post("/:index",(req,res)=>{
+  const index = req.params.index
+
+  for(let i=0 ; i<mustToVisit.length ; i++){
+    if(index === i){
+      favPlaceArr.push(mustToVisit[i])
+    }
+  }
+  res.status(200)
+  res.json(favPlaceArr)
+})
+
+app.get("/favPlace",(req,res)=>{
+  res.status(200)
+  res.json(favPlaceArr)
 })
 
 app.listen(port, () => {
