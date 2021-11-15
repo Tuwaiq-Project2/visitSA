@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState } from "react";
+import ReactPlayer from "react-player";
+import "./Header.css"
+import img from "./saudiV2.jpg";
 
 export default function Header() {
-    return (
-        <div>
-            
-            <h1>  Header:شغل لولو الحلو </h1>
-
-        </div>
-    )
+  const [showVid, setShowVid] = useState(false)
+  const sratr = () => {
+    setShowVid(!showVid)
+  }
+  return (
+    <div className="background">
+      <h1>Welcome to our page</h1>
+      <hr />
+      <button onClick={() => { sratr() }}>  ▶  </button>
+      {showVid ? <div>
+        <ReactPlayer className="ved"
+          url="https://www.youtube.com/watch?v=tQTcbTq9f-k"
+        />
+      </div> : ""}
+    </div>
+  );
 }
