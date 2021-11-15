@@ -1,0 +1,60 @@
+.containerLikes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 150px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.459);
+    border-radius: 1rem;
+    transition: 0.2s;
+}
+
+.containerLikes:hover{
+    transform: scale(1.009);
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.733);
+}
+
+.containerLikes div{
+    padding: 2px;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 1rem;
+    transition: 0.5s ;
+}
+
+.containerLikes img{
+    width: 200px;
+    height: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px #000000;
+}
+
+.containerLikes h3{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.containerLikes span{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: -50px;
+    right: -20px;
+    font-size: 30px;
+    color: red;
+    text-shadow: 1px 1px #000000;
+
+}
+
+.containerLikes span:hover{
+    cursor: pointer;
+    color: white;
+}

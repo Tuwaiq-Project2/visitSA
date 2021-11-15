@@ -9,3 +9,46 @@
     font-size:xx-large  ;
     font-family: Lato, sans-serif;
 }
+
+body{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%; 
+}
+
+.navigation{
+    background-color:rgb(95, 158, 160,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+.list-ul{
+    margin-right: 1rem;
+    margin:0px;
+    padding: 0px;
+    display: flex; 
+    list-style-type: none;
+    
+}
+
+.list-ul li{
+    text-decoration: none;
+    display: block;
+    color: rgb(59, 101, 102);
+    padding: 0.7rem;
+}
+
+.list-ul li:hover{
+    background-color: rgb(95, 158, 160,0.7);
+}
+
+.logoNav img{
+    width: 100px;
+    /* justify-content: center;
+    align-items: center; */
+    margin: auto;
+    margin-top: 5px;
+    margin-left: 5px;
+}

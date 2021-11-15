@@ -8,7 +8,6 @@ import FavPlace from "./Component/FavPlace";
 function App() {
   return (
     <div>
-      app
       <NavBar />
       <Route exact path="/home" component={Home} />
       <Route exact path="/header" component={Header} />
