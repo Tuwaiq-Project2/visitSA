@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navBar.css"
-import logo from "./logo.png"
+import "./navBar.css";
+import logo from "./logo.png";
 
 export default function NavBar() {
   return (
@@ -9,24 +9,21 @@ export default function NavBar() {
       <div>
         <nav className="navigation">
           <ul className="list-ul">
-          <div className="logoNav"><Link to="/home"> <img src={logo} alt="" /> </Link></div>
-            <li>
-              <Link to="/home">Home</Link>{" "}
-            </li>
-
-            <li>
-              <Link to="/header">Header</Link>{" "}
-            </li>
-            {/* <li>
-              <Link to="/navbar">NavBar</Link>{" "}
-            </li> */}
-            <li>
-              <Link to="/mustovisit">MustToVisit</Link>{" "}
-            </li>
-            <li>
-              <Link to="/fav-place">FavPlaces</Link>{" "}
-            </li>
-            
+            <div className="logoNav">
+              <Link to="/home">
+                {" "}
+                <img src={logo}/>
+              </Link>
+            </div>
+            <Link to="/home">
+              <li>Home</li>
+            </Link>
+            <Link to="/mustovisit">
+              <li>MustToVisit</li>
+            </Link>
+            <Link to="/fav-place">
+              <li>FavPlaces</li>
+            </Link>
           </ul>
         </nav>
       </div>
