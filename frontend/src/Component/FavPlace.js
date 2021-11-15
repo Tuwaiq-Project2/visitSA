@@ -7,9 +7,9 @@ export default function FavPlace() {
     
 
     useEffect (async () => {
-        const response = await axios.post("http://localhost:5000/favPlace")
+        const response = await axios.get("http://localhost:5000/favPlace")
         setFavoriteList(response.data)
-    }, [favoriteList])
+    }, [])
 
     return (
         <div>

@@ -22,8 +22,22 @@
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.733);
 }
 
+.container img {
+  width: 300px;
+  height: 200px;
+}
+
+.container img:hover{
+    cursor: pointer;
+}
+
 .container h3{
     cursor: pointer;
+}
+
+hr {
+  opacity: 30%;
+  width: 80%;
 }
 
 span{
@@ -69,17 +83,3 @@ span:hover{
   top: 1.3em;
   left: 0.6em;
 } */
-
-.container img {
-  width: 300px;
-  height: 200px;
-}
-
-.container img:hover{
-    cursor: pointer;
-}
-
-hr {
-  opacity: 30%;
-  width: 80%;
-}
