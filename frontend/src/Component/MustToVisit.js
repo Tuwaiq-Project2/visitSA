@@ -9,7 +9,6 @@ export default function MustToVisit() {
   useEffect(async () => {
     const response = await axios.get("http://localhost:5000/");
     setCardsArr(response.data);
-    console.log(response.data);
   }, []);
 
   const favPlace = async (index) => {
