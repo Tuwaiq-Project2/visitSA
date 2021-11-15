@@ -3,8 +3,7 @@ import axios from 'axios'
 
 export default function FavPlace() {
 
-    const [favoriteList, setFavoriteList] = useState([])
-    
+    const [favoriteList, setFavoriteList] = useState([])    
 
     useEffect (async () => {
         const response = await axios.get("http://localhost:5000/favPlace")

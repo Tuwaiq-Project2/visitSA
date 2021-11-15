@@ -23,12 +23,7 @@ app.get("/",(req,res)=>{
 
 app.post("/:index",(req,res)=>{
   const index = req.params.index
-
-  for(let i=0 ; i<mustToVisit.length ; i++){
-    if(index === i){
-      favPlaceArr.push(mustToVisit[i])
-    }
-  }
+  favPlaceArr.push(mustToVisit[index])
   res.status(200)
   res.json(favPlaceArr)
 })

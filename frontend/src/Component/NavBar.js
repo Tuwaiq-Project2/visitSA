@@ -20,6 +20,10 @@ export default function NavBar() {
           <li>
             <Link to="/mustovisit">MustToVisit</Link>{" "}
           </li>
+          <li>
+            <Link to="/fav-place">FavPlaces</Link>{" "}
+          </li>
+          
         </ul>
       </div>
     </div>
