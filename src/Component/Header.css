@@ -1,0 +1,41 @@
+body{
+    background-image: url("https://www.saudiembassy.net/sites/default/files/u67/saudiV2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 300% ;
+ height: 50%; */
+ /* margin-top: 50%; */
+}
+.background{
+    /* background-image: url("https://www.saudiembassy.net/sites/default/files/u67/saudiV2.jpg"); */
+    width: 100%;
+    height: 100px;
+}
+
+
+img{
+ 
+    width: 100%;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+
+    .ved{
+
+margin: 100px;
+    }
+
+    button{
+        float: right;
+        text-align: center;
+        border-radius: 20px;
+        /* box-shadow: 30px; */
+        width: 50px;
+        
+    }
+
+    

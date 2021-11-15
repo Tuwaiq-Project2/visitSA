@@ -4,7 +4,7 @@ export default function MustToVisit() {
    
     return (
         <div>
-            MustToVisit
+        
             
         </div>
     )
