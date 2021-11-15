@@ -13,6 +13,7 @@ export default function MustToVisit() {
 
   const favPlace = async (index) => {
     const response = await axios.post(`http://localhost:5000/${index}`);
+    console.log(response.data);
   };
 
   return (
@@ -22,7 +23,7 @@ export default function MustToVisit() {
           return (
             <div key={index}>
               <img src={elem.imgUrl} />
-              <span
+              <span className="like"
                 onClick={() => {
                   favPlace(index);
                 }}

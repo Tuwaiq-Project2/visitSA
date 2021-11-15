@@ -23,7 +23,24 @@ app.get("/",(req,res)=>{
 
 app.post("/:index",(req,res)=>{
   const index = req.params.index
-  favPlaceArr.push(mustToVisit[index])
+  for(let i=0;i<favPlaceArr.length;i++){
+    if(mustToVisit[index] === favPlaceArr[i]){
+      favPlaceArr.push(mustToVisit[index])
+    }
+  }
+  res.status(200)
+  res.json(favPlaceArr)
+})
+
+app.post("/fav:index",(req,res)=>{
+  const index = req.params.index
+
+  for(let i=0 ; i<mustToVisit.length ; i++){
+    if(favPlaceArr[index].header == mustToVisit[i].header){
+      favPlaceArr.splice(index,1)
+    }
+  }
+
   res.status(200)
   res.json(favPlaceArr)
 })
