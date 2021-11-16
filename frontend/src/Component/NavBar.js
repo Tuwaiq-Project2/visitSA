@@ -10,12 +10,11 @@ export default function NavBar() {
         <nav className="navigation">
           <ul className="list-ul">
             <div className="logoNav">
-              <Link to="/home">
-                {" "}
+              <Link to="/">
                 <img src={logo}/>
               </Link>
             </div>
-            <Link to="/home">
+            <Link to="/">
               <li>Home</li>
             </Link>
             <Link to="/mustovisit">
@@ -24,6 +23,14 @@ export default function NavBar() {
             <Link to="/fav-place">
               <li>FavPlaces</li>
             </Link>
+            
+              <Link to="/sign-up">
+                <li>Sign up</li>
+              </Link>
+              <Link to="/log-in">
+                <li>Log in</li>
+              </Link>
+            
           </ul>
         </nav>
       </div>

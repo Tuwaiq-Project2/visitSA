@@ -10,10 +10,15 @@ export default function FavPlace() {
     setFavoriteList(response.data);
   }, []);
 
-  const favPlace = async (index) => {
-    const response = await axios.post(`http://localhost:5000//fav${index}`);
-    console.log(response.data);
-  };
+  const unLike = async(header) => {
+    const response = await axios.delete(`http://localhost:5000/unlike${header}`)
+    setFavoriteList(response.data)
+  }
+
+  // const favPlace = async (index) => {
+  //   const response = await axios.post(`http://localhost:5000//fav${index}`);
+  //   console.log(response.data);
+  // };
 
   return (
     <div>        
@@ -25,7 +30,8 @@ export default function FavPlace() {
                   <h3>{elem.header}</h3>
                   <span
                     onClick={() => {
-                      favPlace(index);
+                      unLike(elem.header);
+                      // favPlace(index);
                     }}
                   >
                     ♥

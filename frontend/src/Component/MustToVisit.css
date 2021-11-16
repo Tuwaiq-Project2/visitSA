@@ -58,6 +58,24 @@ hr {
     color: red;
 }
 
+.input-search{
+  width: 300px;
+  text-align: center;
+}
+
+.button-search{
+  width: 100px;
+}
+
+.div-search{
+  display: flex;
+  position: relative;
+  /* top: 100%; */
+  /* bottom: 20%; */
+  left: 20%;
+  /* justify-content: space-evenly; */
+}
+
 /* .container div::before{
     content: "♥";
     position: absolute;
