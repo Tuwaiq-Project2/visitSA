@@ -1,16 +1,29 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./MustToVisit.css";
+import Card1 from "./Card.js"
+import { useHistory } from "react-router-dom";
 
-export default function MustToVisit() {
+// import { Link } from "react-router-dom";
+
+export default function MustToVisit({userId}) {
+  const history = useHistory();
+
   const [cardsArr, setCardsArr] = useState([]);
   const [inputValue, setInputValue] = useState("")
   const [searchArr, setSearchArr] = useState([])
 
+  // console.log(userId);
   useEffect(async () => {
     const response = await axios.get("http://localhost:5000/");
     setCardsArr(response.data);
   }, []);
+
+
+  const goToCard  =(index)=>{
+    history.push(`/card/${index+1}`);
+  }
+
 
   const favPlace = async (elem,index) => {
 
@@ -41,20 +54,29 @@ export default function MustToVisit() {
         // console.log(elem.header)
 
     // const response = await axios.post(`http://localhost:5000/add-fav${index}`)
-    const response = await axios.get("http://localhost:5000/favPlace");
-    const newArr = response.data
-    for(let i=0 ; i<newArr.length ; i++){
-      if(newArr[i].header == elem.header){
-        const res = await axios.delete(`http://localhost:5000/unlike${newArr[i].header}`)
-        return
-      }
-    }
-    
-    const resPost = await axios.post(`http://localhost:5000/add-fav${index}`)
-
-
+    const response = await axios.post(`http://localhost:5000/favPlace`,{
+      index: index,
+      userId:userId
+    });
 
     console.log(response.data);
+    // console.log(response.data);
+
+    // const newArr = response.data
+    // for(let i=0 ; i<newArr.length ; i++){
+    //   if(newArr[i].header == elem.header){
+    //     const res = await axios.delete(`http://localhost:5000/unlike${newArr[i].header}`)
+    //     return
+    //   }
+    // }
+    
+    // const resPost = await axios.post(`http://localhost:5000/add-fav${index}`,{
+    //   userId:userId
+    // })
+
+
+
+    // console.log(response.data);
     // setCardsArr(response.data)
 
     // const copiedArr = [...cardsArr]
@@ -104,7 +126,7 @@ export default function MustToVisit() {
                 ♥
               </span>
               <hr />
-              <h3>{elem.header}</h3>
+              <h3  onClick={()=>{goToCard(index)}}>{elem.header}</h3>
               <p>{elem.paragraph}</p>
             </div>
           );
@@ -112,6 +134,7 @@ export default function MustToVisit() {
         :
         cardsArr.map((elem, index) => {
           return (
+            // <div onClick={()=>{<Link to="/sign-up"/>}} key={index}>
             <div key={index}>
               <img src={elem.imgUrl} />
               <span className="like"
@@ -122,7 +145,7 @@ export default function MustToVisit() {
                 ♥
               </span>
               <hr />
-              <h3>{elem.header}</h3>
+              <h3  onClick={()=>{goToCard(index)}}>{elem.header}</h3>
               <p>{elem.paragraph}</p>
             </div>
           );

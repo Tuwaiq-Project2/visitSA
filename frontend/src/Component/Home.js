@@ -29,10 +29,6 @@ export default function Home() {
             <iframe
         src={`https://www.youtube.com/embed/GOqUXlnNuhg`}
       ></iframe>
-            {/* <iframe width="100%" height="500px" src="https://www.youtube.com/embed/tQTcbTq9f-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-              {/* <ReactPlayer className="ved"
-            url="https://www.youtube.com/watch?v=tQTcbTq9f-k"
-          /> */}
         </div> : 
         <img className="img-header" src={header} />
         }
