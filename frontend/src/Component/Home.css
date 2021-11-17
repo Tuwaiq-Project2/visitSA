@@ -148,3 +148,44 @@ hr {
     border-radius: 20px;
         width: 50px;
 } */
+
+.contact-us{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  /* border: 1px solid black; */
+  /* grid-template-rows: 1fr 1fr; */
+}
+
+.contact-us span{
+  position:relative;
+  top: -7px;
+}
+
+.icons-to-contact{
+  /* display: flex; */
+  width: 200px;
+  justify-content: space-around;
+  font-size: 18px;
+}
+
+.contact-us img{
+  width: 30px;
+  cursor: pointer;
+}
+
+.contact-us h3{
+  margin-left: 4%;
+  width: 100px;
+  border-bottom: 1px solid rgba(110, 42, 165, 0.589);
+}
+
+.Copyright{
+  /* border: 1px solid black; */
+  display: flex;
+  position: relative;
+  left: 50%;
+  top: -70px;
+  justify-content: center;
+}
