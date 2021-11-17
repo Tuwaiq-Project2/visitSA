@@ -32,7 +32,7 @@ export default function Home() {
         </div> : 
         <img className="img-header" src={header} />
         }
-        <h1 className="header-home">Welcome to our page</h1>
+        <h1 className="header-home">Welcome in the inspired kingdom</h1>
         <hr />
         
         <div className="container-home-page">

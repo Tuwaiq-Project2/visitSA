@@ -1,5 +1,8 @@
 import axios from 'axios'
 import React, {useState,useEffect} from 'react'
+import "./LogIn.css"
+import logo from "./logo.png";
+
 
 export default function LogIn({setUserId}) {
 
@@ -20,6 +23,12 @@ export default function LogIn({setUserId}) {
         setEmailInput(e.target.value)
     }
 
+
+    // const storageCurrentUser = async()=>{
+
+    //     localStorage.setItem(JSON.stringify())
+    // }
+
     const logInButton = async()=>{
 
 
@@ -28,11 +37,18 @@ export default function LogIn({setUserId}) {
             email: emailInput,
             password: passwordInput
         })
-        console.log(response.data);
+        // console.log(response.data);
         if (response.data.id){
             setUserId(response.data.id)
+            localStorage.setItem("Current id",JSON.stringify(response.data.id))
+            localStorage.setItem("Current email",JSON.stringify(response.data.email))
+            
         }
-        // } catch{
+
+       
+
+
+    // } catch{
         //     alert("Check yout email or passowrd")
         // }
         
@@ -47,9 +63,14 @@ export default function LogIn({setUserId}) {
 
     return (
         <div>
-            <input onChange={(e)=>{logPassword(e)}} type="text" placeholder="password"/>
-            <input onChange={(e)=>{logEmail(e)}} type="text" placeholder="email"/>
-            <button onClick={()=>{logInButton()}}>LOG IN</button>
+            <img className="header-logo-login" src={logo} alt="" />
+            <h3 className="login-page">Log in page:</h3>
+            <div className="log-in-container">
+                <input onChange={(e)=>{logEmail(e)}} type="text" placeholder="email"/>
+                <input onChange={(e)=>{logPassword(e)}} type="text" placeholder="password"/>
+
+                <button onClick={()=>{logInButton()}}>LOG IN</button>
+            </div>
         </div>
     )
 }

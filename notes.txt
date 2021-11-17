@@ -1,0 +1,16 @@
+regex
+login by google
+fav list **
+upload image **
+color heart **
+
+content
+
+css sign up & log in
+responsive **
+show current user **
+
+pass current user to components => from back end to app to components
+
+♡
+♥

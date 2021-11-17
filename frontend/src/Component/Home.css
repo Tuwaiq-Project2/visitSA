@@ -1,10 +1,6 @@
 body {
-  /* background-image: url("./saudiV2.png"); */
-  /* background-repeat: no-repeat;
-    background-size: cover; */
-  /* width: 300% ;
- height: 50%; */
-  /* margin-top: 50%; */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #542b72;
 }
 
 .button-start {
@@ -44,8 +40,9 @@ body {
 }
 
 .header-home {
+  font-family: 'Times New Roman', Times, serif;
   text-align: center;
-  color: white;
+  /* color: white; */
   font-size: 50px;
   /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 }
@@ -61,9 +58,10 @@ iframe {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 2%;
   margin-bottom: 10px;
   width: 99%;
+  
 }
 
 .container-home-page div {
