@@ -61,6 +61,8 @@ hr {
 .input-search{
   width: 300px;
   text-align: center;
+  cursor: text;
+
 }
 
 .button-search{
@@ -88,6 +90,8 @@ hr {
     height: 20px;
     border: 1px solid #6c3d8ea9;
     color: #6c3d8e;
+    cursor: text;
+
 }
 
 .div-search button{

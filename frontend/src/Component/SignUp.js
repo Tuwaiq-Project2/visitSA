@@ -52,8 +52,9 @@ export default function SignUp() {
             <h3 className="signup-page">Sign up page:</h3>
             <div className="sign-up-container">
                 <input onChange={(e)=>{saveName(e)}} type="text" placeholder="name"/>
-                <input onChange={(e)=>{savePassword(e)}} type="text" placeholder="password"/>
                 <input onChange={(e)=>{saveEmail(e)}} type="text" placeholder="email"/>
+                <input onChange={(e)=>{savePassword(e)}} type="password" placeholder="password"/>
+
                 <button onClick={()=>{
                 //     <Link to="/">
                 //   <li>Home</li>

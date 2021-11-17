@@ -69,3 +69,19 @@ body {
   margin-top: 5px;
   margin-left: 5px;
 }
+
+.go-back-btn{
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  width: 80px;
+  background-color: #856d972d;
+  border-radius: 10px;
+  border: 1px solid #6c3d8ea9;
+  color: #6c3d8e;
+}
+
+.go-back-btn:hover{
+  background-color: #856d977a;
+  cursor: pointer;
+}

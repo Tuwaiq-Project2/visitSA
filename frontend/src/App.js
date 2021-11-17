@@ -19,7 +19,7 @@ function App() {
   
   return (
     <div>
-      <NavBar />
+      <NavBar userId={userId}/>
       {/* {userId} */}
       <Switch>
       <Route exact path="/" component={Home} />

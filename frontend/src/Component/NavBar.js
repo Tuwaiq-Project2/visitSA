@@ -1,32 +1,27 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navBar.css";
 import logo from "./logo.png";
-import { useParams,useHistory } from "react-router";
+import { useParams, useHistory } from "react-router";
 
+export default function NavBar(props) {
+  const history = useHistory();
+  // const {id} = useParams();
+  const [currentId, setCurrentId] = useState("");
+  const [currentEmail, setCurrentEmail] = useState("");
+  // const [toggleNav, setToggleNav] = useState(true);
 
-export default function NavBar() {
+  const showCurrentHideSignUp = () => {
+    // const getId = JSON.parse(localStorage.getItem("Current id"))
+    const getEmail = JSON.parse(localStorage.getItem("Current email"));
 
-  const history = useHistory()
-  const {id} = useParams();
-  const [currentId, setCurrentId] = useState("")
-  const [currentEmail, setCurrentEmail] = useState("")
-  const [toggleNav, setToggleNav] = useState(true)
-
-  const showCurrentHideSignUp=()=>{
-    const getId = JSON.parse(localStorage.getItem("Current id"))
-    const getEmail = JSON.parse(localStorage.getItem("Current email"))
-
-    if(getId){
-      setCurrentId(getId)
-      setCurrentEmail(getEmail)
-      setToggleNav(false)
+    if (props.userId) {
+      console.log(props.userId);
+      setCurrentId(props.userId);
+      setCurrentEmail(getEmail);
+      // setToggleNav(false);
     }
-
-  }
-
-
-  
+  };
 
   return (
     <div>
@@ -35,11 +30,17 @@ export default function NavBar() {
         <nav className="navigation">
           <ul className="list-ul">
             <div className="logoNav">
-            <button onClick={()=>{
-            history.goBack()
-        }}> go back</button>
+              <button
+                className="go-back-btn"
+                onClick={() => {
+                  history.goBack();
+                }}
+              >
+                {" "}
+                go back
+              </button>
               <Link to="/">
-                <img src={logo}/>
+                <img src={logo} />
               </Link>
             </div>
             <Link to="/">
@@ -51,23 +52,19 @@ export default function NavBar() {
             <Link to="/fav-place">
               <li>Favorite places</li>
             </Link>
-            
-            
-              {
-              toggleNav?
-                <span className="signup-login-div">
-                  <Link to="/sign-up">
-                    <li>Sign up</li>
-                  </Link>
-                  <Link to="/log-in">
-                    <li>Log in</li>
-                  </Link>
-                </span>
-               : 
-               <li>{currentEmail}</li>
-              }
-              
-            
+
+            {currentId ? (
+              <li>{currentEmail}</li>
+            ) : (
+              <span className="signup-login-div">
+                <Link to="/sign-up">
+                  <li>Sign up</li>
+                </Link>
+                <Link to="/log-in">
+                  <li>Log in</li>
+                </Link>
+              </span>
+            )}
           </ul>
         </nav>
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams,useHistory } from "react-router";
 import ImageUploading from 'react-images-uploading';
+import "./Card.css"
 
 
 export default function Card() {
@@ -59,14 +60,16 @@ export default function Card() {
         {/* <button onClick={()=>{
             history.goBack()
         }}> go back</button>      */}
-         <div>
+         <div className="container-card-page">
           {/* {  console.log(useParams())} */}
           {/* <img src={cardOne.imgUrl} alt="" /> */}
         <img src={cardOne.imgUrl} />
-        <h3>{cardOne.header}</h3>
+        <h2>{cardOne.header}</h2>
         <span>♥</span>
+        <hr />
         <div>
-          <h3>Add comment:</h3>
+          {/* <h4>Add comment:</h4> */}
+          <h4>Share with us your moments:</h4>
           <label>Enter name:</label>{" "}
           <input
             onChange={(e) => {
@@ -75,6 +78,7 @@ export default function Card() {
             type="text"
           />
           <br /> <br />
+          {/* <br /> <br /> */}
           <textarea
             onChange={(e) => {
               saveCommentInput(e);
@@ -94,7 +98,7 @@ export default function Card() {
         {({
           imageList,
           onImageUpload,
-          onImageRemoveAll,
+          // onImageRemoveAll,
           onImageUpdate,
           onImageRemove,
           isDragging,
@@ -110,10 +114,10 @@ export default function Card() {
               Click or Drop here
             </button>
             &nbsp;
-            <button onClick={onImageRemoveAll}>Remove all images</button>
+            {/* <button onClick={onImageRemoveAll}>Remove all images</button> */}
             {imageList.map((image, index) => (
               <div key={index} className="image-item">
-                <img src={image['data_url']} alt="" width="100" />
+                <img src={image['data_url']} alt="" />
                 <div className="image-item__btn-wrapper">
                   <button onClick={() => onImageUpdate(index)}>Update</button>
                   <button onClick={() => onImageRemove(index)}>Remove</button>
