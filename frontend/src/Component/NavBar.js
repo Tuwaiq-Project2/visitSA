@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navBar.css";
 import logo from "./logo.png";
-import { useParams, useHistory } from "react-router";
+import { useHistory } from "react-router";
 
 export default function NavBar(props) {
   const history = useHistory();
@@ -36,7 +36,6 @@ export default function NavBar(props) {
                   history.goBack();
                 }}
               >
-                {" "}
                 go back
               </button>
               <Link to="/">
@@ -44,7 +43,7 @@ export default function NavBar(props) {
               </Link>
             </div>
             <Link to="/">
-              <li>Home</li>
+              <li onClick={()=>{showCurrentHideSignUp()}}>Home</li>
             </Link>
             <Link to="/mustovisit">
               <li>Must to visit</li>

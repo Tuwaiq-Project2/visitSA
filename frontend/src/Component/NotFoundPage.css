@@ -1,0 +1,8 @@
+.not-found-page{
+    margin: auto;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    width: 60%;
+    height: 90vh;
+}

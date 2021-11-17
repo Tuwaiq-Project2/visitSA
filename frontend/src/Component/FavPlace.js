@@ -8,7 +8,7 @@ export default function FavPlace({ userId }) {
   const getId = JSON.parse(localStorage.getItem("Current id"))
 
   useEffect(async () => {
-    console.log(getId);
+    // console.log(getId);
 
     const response = await axios.get(
       `http://localhost:5000/list-fav-places${getId}`
@@ -18,12 +18,13 @@ export default function FavPlace({ userId }) {
   }, []);
 
   const unLike = async(header) => {
-    console.log(header);
-    console.log({userId});
+    // console.log(header,"header DDDD")
+    // console.log(userId,"IIIIIDDDDD")
     const response = await axios.delete(`http://localhost:5000/unlike${userId}`, { 
       data: { header: header } 
+      // header:header,
     })
-    console.log(response.data);
+    console.log(response.data,"response.data");
     setFavoriteList(response.data)
   }
 
@@ -37,6 +38,9 @@ export default function FavPlace({ userId }) {
 
       <div>
         {/* {console.log(favoriteList)} */}
+        {console.log(getId,"getId")}
+        {console.log(userId,"userId")}
+    
         {favoriteList.map((elem, index) => {
           return (
             // <div onClick={()=>{<Link to="/sign-up"/>}} key={index}>

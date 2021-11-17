@@ -5,6 +5,9 @@ import "./Home.css"
 // import MustToVisit from "./MustToVisit"
 import header from "./saudiV2.png"
 import { Link } from "react-router-dom";
+import youtubeIcon from "./youtube.png"
+import twitterIcon from "./twitter.png"
+import emailIcon from "./email.png"
 // import img from "./saudiV2.jpg";
 
 export default function Home() {
@@ -23,14 +26,18 @@ export default function Home() {
 
     return (
       <div className="background">
-                  <button className="button-start" onClick={() => { sratr() }}>▶</button>
+                  {/* <button className="button-start" onClick={() => { sratr() }}>▶</button> */}
 
           {showVid ? <div>
+            <button className="button-start" onClick={() => { sratr() }}>▶||</button>
             <iframe
         src={`https://www.youtube.com/embed/GOqUXlnNuhg`}
       ></iframe>
-        </div> : 
+        </div> : <div>
+        <button className="button-start" onClick={() => { sratr() }}>▶</button>
+
         <img className="img-header" src={header} />
+        </div>
         }
         <h1 className="header-home">Welcome in the inspired kingdom</h1>
         <hr />
@@ -56,6 +63,25 @@ export default function Home() {
                   Show more
                 </span>
               </Link>
+        </div>
+
+<hr />
+        <div className="contact-us">
+          <h3>Contact:</h3>
+          {/* <hr /> */}
+          <div className="icons-to-contact">
+            <img src={youtubeIcon} alt="Youtube Icon" />
+            <span>/VisitSA</span> <br /><br />
+            <img src={twitterIcon} alt="Twitter Icon" />
+            <span>/VisitSaudiAR</span> <br /><br />
+            <img src={emailIcon} alt="Email Icon" />
+            <span>visit.sa@gmail.com</span>
+          </div>
+
+          <div className="Copyright">
+          Copyright © 2021 all rights reserved by VisitSA team.
+          </div>
+
         </div>
       </div>
     );

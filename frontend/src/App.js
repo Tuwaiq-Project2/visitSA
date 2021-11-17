@@ -8,6 +8,7 @@ import FavPlace from "./Component/FavPlace";
 import SignUp from "./Component/SignUp";
 import LogIn from "./Component/LogIn";
 import Card from "./Component/Card";
+import NotFoundPage from "./Component/NotFoundPage";
 
 
 
@@ -29,7 +30,7 @@ function App() {
       <Route exact path="/sign-up" component={SignUp} />
       <Route exact path="/log-in" render={()=>{return <LogIn setUserId={setUserId}/>}} />
       <Route exact path="/card/:id" component={Card}  />
-      <Route path="*" render={()=>{return <h1>404 </h1>}}/>
+      <Route path="*" component={NotFoundPage}/>
       </Switch>
     </div>
   );

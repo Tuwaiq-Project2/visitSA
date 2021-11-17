@@ -8,11 +8,11 @@ content
 
 css sign up & log in / done
 responsive **
-show current user **
+show current user ** / done
 
-pass current user to components => from back end to app to components
+pass current user to components => from back end to app to components /
 
 ♡
 ♥
 
-404 page
+404 page / done
