@@ -213,13 +213,13 @@ app.delete("/unlike:userId", (req, res) => {
 
   for(let i=0 ; i< users.length ; i++){
     if(users[i].id == userId){
-      arr = [...users[i]]
+      arr.push(users[i])
     }
   }
 
   for(let i=0 ; i<arr.length ; i++){
     if(arr[i].header == header){
-      arr.splice(i,1)
+      arr.favPlaceArr.splice(i,1)
     }
   }
 
@@ -230,7 +230,7 @@ app.delete("/unlike:userId", (req, res) => {
   // }
 
   res.status(200);
-  res.json(arr);
+  res.json(arr.favPlaceArr);
 });
 
 // app.post("/:index",(req,res)=>{

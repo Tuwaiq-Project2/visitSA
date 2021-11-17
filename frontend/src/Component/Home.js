@@ -41,9 +41,9 @@ export default function Home() {
               return (
                 <div key={index}>
                   <img src={elem.imgUrl} />
-                  <span className="like">
+                  {/* <span className="like">
                     ♥
-                  </span>
+                  </span> */}
                   <hr />
                   <h3>{elem.header}</h3>
                   <p>{elem.paragraph}</p>

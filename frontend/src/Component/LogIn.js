@@ -67,7 +67,7 @@ export default function LogIn({setUserId}) {
             <h3 className="login-page">Log in page:</h3>
             <div className="log-in-container">
                 <input onChange={(e)=>{logEmail(e)}} type="text" placeholder="email"/>
-                <input onChange={(e)=>{logPassword(e)}} type="text" placeholder="password"/>
+                <input onChange={(e)=>{logPassword(e)}} type="password" placeholder="password"/>
 
                 <button onClick={()=>{logInButton()}}>LOG IN</button>
             </div>

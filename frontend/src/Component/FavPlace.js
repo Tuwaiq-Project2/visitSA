@@ -18,9 +18,12 @@ export default function FavPlace({ userId }) {
   }, []);
 
   const unLike = async(header) => {
+    console.log(header);
+    console.log({userId});
     const response = await axios.delete(`http://localhost:5000/unlike${userId}`, { 
       data: { header: header } 
     })
+    console.log(response.data);
     setFavoriteList(response.data)
   }
 
@@ -40,9 +43,9 @@ export default function FavPlace({ userId }) {
             <div className="containerLikes" key={index}>
               <img src={elem.imgUrl} />
               <span
-                className="like"
+                // className="like-fav-places"
                 onClick={() => {
-                  unLike(elem.header, index);
+                  unLike(elem.header);
                 }}
               >
                 ♥
