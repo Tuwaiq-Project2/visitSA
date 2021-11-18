@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const e = require("express");
 
 const app = express();
 const port = 5000;
@@ -36,11 +37,11 @@ let currentUser = "";
 const mustToVisit = [
   {
     id: 1,
-    header: "The Cultural Hub",
+    header: "MECCA city",
     paragraph:
-      "A cultural delight for all the tourists and business travelers alike, Riyadh is a heart of Saudi Arabia which has retained its traditional charm even after being modernized.",
+      "Visiting Mecca to perform the Hajj is obligatory for all able Muslims. The Great Mosque of Mecca, known as the Grand Mosque, is the home of the Kaaba that Muslims believe Abraham and Ismail built. It is one of the holiest places in Islam and is the direction of prayer for all Muslims",
     imgUrl:
-      "https://www.myholidays.com/blog/content/images/2020/10/Riyadh--The-Cultural-Hub-in-Saudi-Arabia.jpg",
+      "https://www.urbookings.com/wp-content/uploads/2020/01/swissotel-al-maqam.jpg",
     comments: [],
   },
   {
@@ -49,7 +50,7 @@ const mustToVisit = [
     paragraph:
       "a dynamic place of learning and activity. Our library is designed to foster individual and collaborative learning while nurturing a love of reading, discovery and the pursuit of knowledge.",
     imgUrl:
-      "https://www.myholidays.com/blog/content/images/2020/10/Riyadh--The-Cultural-Hub-in-Saudi-Arabia.jpg",
+      "https://vid.alarabiya.net/images/2018/08/25/9cb5bc89-1a16-44df-859b-00d9d4422a25/9cb5bc89-1a16-44df-859b-00d9d4422a25_16x9_1200x676.jpg?width=1138",
     comments: [],
   },
   {
@@ -63,29 +64,53 @@ const mustToVisit = [
   },
   {
     id: 4,
-    header: "The Cultural Hub",
+    header: "NEOM CITY",
     paragraph:
-      "A cultural delight for all the tourists and business travelers alike, Riyadh is a heart of Saudi Arabia which has retained its traditional charm even after being modernized.",
+      "NEOM’s reason for being is change, as we have a unique opportunity to do things differently – at scale. We can elevate the way we live, work and play precisely because we have a blank canvas to work with. We are ‘Made to Change’.",
     imgUrl:
-      "https://www.myholidays.com/blog/content/images/2020/10/Riyadh--The-Cultural-Hub-in-Saudi-Arabia.jpg",
+      "https://www.neom-property.com/wp-content/uploads/2020/10/Neom-Headquarters.jpg",
     comments: [],
   },
   {
     id: 5,
-    header: "Ithra’s Library",
+    header: "Riyadh season",
     paragraph:
-      "a dynamic place of learning and activity. Our library is designed to foster individual and collaborative learning while nurturing a love of reading, discovery and the pursuit of knowledge.",
+      "Saudi Arabia's Riyadh season , witch kicked in the kingdom's capital , offers 64 to 70 hours of entertainment in a day in the form of events. Riyadh season zones including Boulevard Riyadh City , Winter Wonderland , Zaman Village , and alot of other activitis.",
     imgUrl:
-      "https://www.myholidays.com/blog/content/images/2020/10/Riyadh--The-Cultural-Hub-in-Saudi-Arabia.jpg",
+      "https://www.timeoutriyadh.com/cloud/timeoutriyadh/2021/09/27/Winter-Wonderland-1.jpg",
     comments: [],
   },
   {
     id: 6,
-    header: "Umluj is Maldives of Saudi Arabia",
+    header: "Farasan island",
     paragraph:
-      "Is a small town in the northwest of Saudi Arabia 150 km north of Yanbu and right next to the Red Sea",
+      "About 40 kilometers (or a one-hour boat ride) from Jazan, you’ll find the Farasan Islands.  The island is known for its incredible biodiversity — the Saudi Wildlife Authority declared the Farasan Islands a protected area in 1996 — and boasts pristine coral reefs for epic scuba diving, a variety of fish and world-class birding for species including the white-eyed gull.",
     imgUrl:
-      "https://insidesaudi.com/wp-content/uploads/2019/04/Umluj-Islamd.jpg",
+      "https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,h_1080,c_fill,q_auto/cnnarabic/2020/08/17/images/162713.jpg",
+    comments: [],
+  },{
+    id: 7,
+    header: "Alnamas",
+    paragraph:
+      "Al-Namas is a famous hill station located on Sarawat Mountains. is a window to Arab culture and traditions which date back to pre-Islamic period.  Recently, the city has developed a beautiful walking track for local population and tourists. The track offers great natural view and lots of things to do.",
+    imgUrl:
+      "https://directionsksa.com/sites/default/files/styles/media_image/public/2020-07/alnmas_001.jpg?h=6dde8900&itok=UO8WN-_G",
+    comments: [],
+  },{
+    id: 8,
+    header: "Haqel island",
+    paragraph:
+      "Haqlis a city in the northwest of Saudi Arabia near the head of the Gulf of Aqaba. This beach and shipwreck is located 55km south from Haql city in Saudi Arabia’s Tabuk Province. What a stunning backdrop and contrast the majestic mountains provide in the background of this beach scene.",
+    imgUrl:
+      "https://cdn.expatwoman.com/s3fs-public/editorial/saudi_shipwreck4_-_crazeofrealclicks_wordpress_com.jpg",
+    comments: [],
+  },{
+    id: 9,
+    header: "Dughaither Village",
+    paragraph:
+      "Located south of Al-Khobar, Dughaither Island covers an area of about 2,000 square metres. The island is distinguished by its unique view of the Red Sea and the lovely fountain that's surrounded by stunning greenery. It also features a wide selection of high-end international restaurants and cafes in addition to the access it provides to various fun water activities.",
+    imgUrl:
+      "https://www.travellwd.com/wp-content/uploads/2019/07/%D9%85%D9%86%D8%AA%D8%AC%D8%B9-%D8%A7%D9%84%D8%BA%D8%B1%D9%88%D8%A8.jpg",
     comments: [],
   },
 ];
@@ -205,32 +230,44 @@ app.get("/comments-card", (req, res) => {
   res.json(commentsCard1);
 });
 
-app.delete("/unlike:userId", (req, res) => {
+app.delete("/unlike/:userId", (req, res) => {
   const userId = req.params.userId;
-  const header = req.body
+  const { header } = req.body;
 
-  let arr = []
+  // let arr = [];
+  // let fav = [];
 
-  for(let i=0 ; i< users.length ; i++){
-    if(users[i].id == userId){
-      arr.push(users[i])
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].id == userId) {
+      // arr.push(users[i].favPlaceArr);
+      users[i].favPlaceArr = users[i].favPlaceArr.filter((ele) => {
+        return ele.header !== header;
+      });
+      res.status(200);
+      res.json(users[i].favPlaceArr);
+
+      // users[i] = fav
     }
   }
 
-  for(let i=0 ; i<arr.length ; i++){
-    if(arr[i].header == header){
-      arr.favPlaceArr.splice(i,1)
-    }
-  }
+  // fav = arr.filter((elem) => {
+  //   return elem.header == header;
+  // });
 
-  // for (let i = 0; i < favPlaceArr.length; i++) {
-  //   if (favPlaceArr[i].header == header) {
-  //     favPlaceArr.splice(i, 1);
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (arr[i].header == fav.header) {
+  //     arr[i].splice(i, 1);
   //   }
   // }
 
-  res.status(200);
-  res.json(arr.favPlaceArr);
+  // // for(let i=0 ; i<users.length ; i++){
+  // //   if(users[i].id == userId){
+  // //     users[i].favPlaceArr = fav
+  // //   }
+  // // }
+
+  // res.status(200);
+  // res.json(arr);
 });
 
 // app.post("/:index",(req,res)=>{
@@ -261,7 +298,6 @@ app.delete("/unlike:userId", (req, res) => {
 app.post("/favPlace", (req, res) => {
   const { index, userId } = req.body;
 
-  
   // let userPlaces= []
   for (let i = 0; i < users.length; i++) {
     if (userId == users[i].id) {
@@ -270,9 +306,11 @@ app.post("/favPlace", (req, res) => {
   }
 
   res.status(200);
-  res.json(users.find(ele=>{
-    return ele.id === userId
-  }).favPlaceArr);
+  res.json(
+    users.find((ele) => {
+      return ele.id === userId;
+    }).favPlaceArr
+  );
 });
 
 app.listen(port, () => {

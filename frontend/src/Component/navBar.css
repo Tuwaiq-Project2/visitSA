@@ -85,3 +85,26 @@ body {
   background-color: #856d977a;
   cursor: pointer;
 }
+
+
+@media (max-width: 800px){
+
+  .navigation{
+    display: flex;
+    /* font-size: 12px; */
+  }
+
+  .list-ul li{
+    font-size: 12px;
+  }
+
+  .go-back-btn{
+    top: 55px;
+  }
+
+  .logoNav img{
+    width: 100px;
+    position: relative;
+    left: 2%;
+  }
+}

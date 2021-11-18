@@ -70,7 +70,7 @@ export default function MustToVisit({ userId }) {
       userId: userId,
       header:elem.header
     });
-    console.log(res.data);
+    console.log(res.data,"setLikedArr");
     setLikedArr(res.data)
 
     // setLikedArr(response.data)

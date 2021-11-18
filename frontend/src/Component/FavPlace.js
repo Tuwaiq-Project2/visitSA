@@ -20,11 +20,30 @@ export default function FavPlace({ userId }) {
   const unLike = async(header) => {
     // console.log(header,"header DDDD")
     // console.log(userId,"IIIIIDDDDD")
-    const response = await axios.delete(`http://localhost:5000/unlike${userId}`, { 
-      data: { header: header } 
-      // header:header,
-    })
+    // delete("/unlike/:userId"
+    // const response = await axios.delete(`http://localhost:5000/unlike/${userId}`, {header})
+    const response = await axios.delete(`http://localhost:5000/unlike/${userId}`, {
+    //   headers: {
+    //     Authorization: ""
+    //   },
+    //   data: {
+    //     header: header
+    //   }
+    // } )
+    // { 
+    data: { header: header } 
+  })
+    //   header:header,
+    
     console.log(response.data,"response.data");
+    // let arr = response.data
+    
+    // for(let i=0 ; i<arr.length; i ++){
+    //   if(arr[i].header == header){
+    //     arr.splice(i,1)
+    //   }
+    // }
+
     setFavoriteList(response.data)
   }
 
@@ -52,7 +71,7 @@ export default function FavPlace({ userId }) {
                   unLike(elem.header);
                 }}
               >
-                ♥
+                ♥♥♥♥♥♥♥♥♥♥♥♥♥♥
               </span>
               <hr />
               {/* <h3

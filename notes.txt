@@ -7,11 +7,9 @@ color heart ** / done => but delete item from favorite
 content
 
 css sign up & log in / done
-responsive **
+responsive ** / done
 show current user ** / done
-
 pass current user to components => from back end to app to components /
-
 ♡
 ♥
 

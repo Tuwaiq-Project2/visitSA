@@ -132,3 +132,21 @@ hr {
   top: 1.3em;
   left: 0.6em;
 } */
+
+@media (max-width: 800px){
+
+  .div-search{
+    margin-top: 8%;
+    width: 85%;
+  }
+
+  .container{
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 13px;
+    width: 90%;
+  }
+
+}
