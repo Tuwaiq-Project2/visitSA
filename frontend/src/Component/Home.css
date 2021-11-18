@@ -61,7 +61,6 @@ iframe {
   margin-top: 2%;
   margin-bottom: 10px;
   width: 99%;
-  
 }
 
 .container-home-page div {
@@ -188,4 +187,14 @@ hr {
   left: 50%;
   top: -70px;
   justify-content: center;
+}
+
+
+@media ( max-width: 800px ){
+  
+  .container-home-page img{
+    width: 400px;
+    height: 200px;
+  }
+
 }

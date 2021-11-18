@@ -43,13 +43,15 @@ export default function LogIn({setUserId}) {
             localStorage.setItem("Current id",JSON.stringify(response.data.id))
             localStorage.setItem("Current email",JSON.stringify(response.data.email))
             
+        } else{
+            alert("Check your email or passowrd")
         }
 
        
 
 
     // } catch{
-        //     alert("Check yout email or passowrd")
+            // alert("Check yout email or passowrd")
         // }
         
         // for(let i=0 ; i<usersArr.length ; i++){
