@@ -71,7 +71,7 @@ export default function FavPlace({ userId }) {
                   unLike(elem.header);
                 }}
               >
-                ♥♥♥♥♥♥♥♥♥♥♥♥♥♥
+                ♥
               </span>
               <hr />
               {/* <h3
